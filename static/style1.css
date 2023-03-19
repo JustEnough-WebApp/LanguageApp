@@ -1,0 +1,31 @@
+h2{
+    text-align: center;
+    font-family: Didot, serif;
+    font-size: 80px;
+    color: rgb(51, 51, 188);
+}
+
+.navbar{
+    background-color: rgb(51, 51, 188);
+}
+
+.navbar-brand{
+    color: whitesmoke;
+    font-family: Didot, serif;
+}
+
+p{
+    font-size: larger;
+    padding-top:30px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+#contact{
+    font-family: Didot, serif;
+    font-size: 50px;
+    color: rgb(51, 51, 188);
+    background-color: rgba(255, 255, 255, 0.934);
+    text-align: center;
+    font-weight: lighter;
+}
