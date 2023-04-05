@@ -3,14 +3,12 @@ h1 {
     font-family: Didot, serif;
     font-size: 100px;
     color: rgb(51, 51, 188);
-   padding-top: 70px;
+    padding-top: 70px;
 }
 
-h2 {
-    text-align: center;      
+h5 {
+    text-align: center;
     font-family: Didot, serif;
-    font-size: 40px;
-    padding-top: 40px;
 }
 
 p {
@@ -20,7 +18,7 @@ p {
 
 /* Styles for wrapping the search box */
 .container{
-    width:400px;
+    width: 50vw;
     height: 400px;
 }
 
