@@ -18,27 +18,83 @@ ping();
 // Sample Questions for Testing
 const quizData = [
     {
-        question: "Tallest is the opposite of ________",
-        a: "longest",
-        b: "widest",
-        c: "shortest",
-        d: "biggest",
+        question: "morado",
+        a: "grey",
+        b: "pink",
+        c: "purple",
+        d: "brown",
         correct: "c"
     },
     {
-        question: "Happy is the ________ of sad",
-        a: "opposed",
-        b: "opposite",
-        c: "oppose",
-        d: "oppositive",
+        question: "viernes",
+        a: "the morning",
+        b: "Friday",
+        c: "yesterday",
+        d: "Thursday",
         correct: "b"
     },
     {
-        question: "________ down",
-        a: "Sit",
-        b: "Open",
-        c: "Close",
-        d: "Stand",
+        question: "la fresa",
+        a: "the the banana",
+        b: "the dessert",
+        c: "the strawberry",
+        d: "the fruit",
+        correct: "c"
+    },
+    {
+        question: "catorce",
+        a: "thirteen",
+        b: "fourteen",
+        c: "thirty",
+        d: "forty",
+        correct: "b"
+    },
+    {
+        question: "primo",
+        a: "nephew",
+        b: "son",
+        c: "cousin (male)",
+        d: "grandson",
+        correct: "c"
+    },
+    {
+        question: "pensar",
+        a: "to think",
+        b: "to read",
+        c: "to want",
+        d: "to understand",
+        correct: "a"
+    },
+    {
+        question: "anxious",
+        a: "ocupado/a",
+        b: "ansioso/a",
+        c: "enamorado/a",
+        d: "cansado/a",
+        correct: "b"
+    },
+    {
+        question: "siempre",
+        a: "never",
+        b: "always",
+        c: "more or less",
+        d: "I'm sorry",
+        correct: "b"
+    },
+    {
+        question: "el cuaderno",
+        a: "the notebook",
+        b: "the papers",
+        c: "the pencil",
+        d: "the movie",
+        correct: "a"
+    },
+    {
+        question: "Buenas noches",
+        a: "Good evening/night",
+        b: "Nice to meet you",
+        c: "Good afternoon",
+        d: "See you later!",
         correct: "a"
     },
 ];
