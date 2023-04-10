@@ -53,9 +53,12 @@
         <br>
         <!--SEARCHING BAR-->
         <form class="d-flex w-30">
-            <input class="form-control rounded-pill" type="search" placeholder="Search" value="">
-            <!-- TODO: implement onclick (on "enter"?) function-->
+            <input id="dictSearch" class="form-control rounded-pill" type="search" placeholder="Search">
+            <button onclick="getSpanish()" type="button">Search!</button>
         </form>
+        <br><br>
+
+        <p><label>Spanish translation: </label> <input id="spanishTranslation" disabled></p>
 
     </body>
 </html>
