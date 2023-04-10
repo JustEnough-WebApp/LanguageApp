@@ -19,7 +19,12 @@ async function getSpanish() {
     const response = await fetch(apiURL);
     const jsonObj = await response.json();
     try {
-        document.getElementById("spanishTranslation").innerHTML = jsonObj[0].shortdef[0];
+        var translation = jsonObj[0].shortdef[0];
+        if (translation.includes(":")) {
+            translation = translation.split(": ").pop();
+        }
+
+        document.getElementById("spanishTranslation").innerHTML = translation;
     } catch (e) {
         document.getElementById("spanishTranslation").innerHTML = 
         "ERROR: cannot find word";
