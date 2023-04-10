@@ -49,18 +49,22 @@
         </nav>
 
         <h1>Dictionary</h1>
-        <!-- TODO: add other languages to list -->
-        <h5>Enter an English word to get the definition and the Spanish translation.</h5> 
+        <h5>Enter an English word to get the definition and possible translations.</h5> 
         <h5>Warning: Use with discretion. Generated translations may not always be correct or what 
             you are looking for.</h5>
         <br>
         <!--SEARCHING BAR-->
         <form class="d-flex w-30">
             <input id="dictSearch" class="form-control rounded-pill" type="search" placeholder="Search">
-            <button onclick="getSpanish()" type="button">Search!</button>
+            <button onclick="fillFields()" type="button">Search!</button>
         </form>
         <br><br>
 
+        <h4>English Definition:</h4>
+        <p id="englishDefn"></p>
+
+        <br><br>
+        
         <h4>Spanish Translation:</h4>
         <p id="spanishTranslation"></p>
         
