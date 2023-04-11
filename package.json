@@ -1,7 +1,7 @@
 {
   "name": "languageapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://just-enough.azurewebsites.net",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
