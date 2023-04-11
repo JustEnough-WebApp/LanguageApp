@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/CPSC440-DeadPoetsScrumciety/LanguageApp#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.2.0",
+    "mongoose": "^7.0.3"
   }
 }
