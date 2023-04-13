@@ -52,7 +52,7 @@ async function getSpanish() {
 async function getGerman() {
     let word = document.getElementById('dictSearch').value;
     let apiURL = serverURL + germanExtension;
-    const response = await fetch(apiURL);
+    const translation = await fetch(apiURL);
     document.getElementById("germanTranslation").innerHTML = translation;
     return;
 }
