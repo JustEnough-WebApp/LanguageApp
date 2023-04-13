@@ -54,5 +54,6 @@ async function getGerman() {
     let apiURL = serverURL + germanExtension;
     const translation = await fetch(apiURL);
     document.getElementById("germanTranslation").innerHTML = translation;
+    console.log(translation);
     return;
 }
