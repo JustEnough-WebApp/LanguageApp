@@ -4,7 +4,7 @@ const dictKey = "?key=e7da4733-26a2-4b45-b02b-e1ee552f6a84";
 const spanishURL = "https://dictionaryapi.com/api/v3/references/spanish/json/" // + word + spanishKey
 const spanishKey = "?key=23e33a70-d854-46ff-9d3f-27667aef8cd6";
 
-const serverURL = ""; // for German translation, API only uses node.js
+const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
 const germanExtension = "/api/getGerman";
 const germanKey = "2b2f1cdb-c324-a0da-7107-dbecc04e19f1:fx";
 
