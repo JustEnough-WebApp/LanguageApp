@@ -12,6 +12,7 @@ const germanKey = "2b2f1cdb-c324-a0da-7107-dbecc04e19f1:fx";
 function fillFields() {
     getDefinition();
     getSpanish();
+    getGerman();
 }
 
 async function getDefinition() {
