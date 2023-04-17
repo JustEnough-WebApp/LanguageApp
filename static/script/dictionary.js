@@ -15,6 +15,13 @@ function fillFields() {
     getGerman();
 }
 
+async function ping() {
+    pingURL = serverURL + "/api/ping";
+    const response = await fetch(currURL);       
+    const data = await response.text();
+    console.log(data);
+}
+
 async function getDefinition() {
     let word = document.getElementById('dictSearch').value;
     let apiURL = dictURL + word + dictKey;
@@ -29,7 +36,6 @@ async function getDefinition() {
     }
     return
 }
-
 
 async function getSpanish() {
     let word = document.getElementById('dictSearch').value;
@@ -52,8 +58,9 @@ async function getSpanish() {
 async function getGerman() {
     let word = document.getElementById('dictSearch').value;
     let apiURL = serverURL + germanExtension;
-    const translation = await fetch(apiURL);
-    document.getElementById("germanTranslation").innerHTML = translation;
+    const result = await fetch(apiURL);
+    const translation = (await result.text()).valueOf(Promise)
     console.log(translation);
+    document.getElementById("germanTranslation").innerHTML = translation;
     return;
 }
