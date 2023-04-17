@@ -58,7 +58,12 @@ async function getSpanish() {
 async function getGerman() {
     let word = document.getElementById('dictSearch').value;
     let apiURL = serverURL + germanExtension;
-    const result = await fetch(apiURL);
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
     const translation = (await result.text()).valueOf(Promise)
     console.log(translation);
     document.getElementById("germanTranslation").innerHTML = translation;
