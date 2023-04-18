@@ -1,21 +1,3 @@
-// .js file that handles api calls to server
-
-const url = "https://just-enough-server.azurewebsites.net/api";
-//const url = "http://localhost:3000";             // for testing purposes
-
-
-async function ping() {
-    currURL = url + "/ping";
-    const response = await fetch(currURL);       
-    const data = await response.text();
-    console.log(data);
-}
-
-ping();
-
-
-
-
 const quiz = document.getElementById('quiz')
 const question = document.getElementById('question')
 const answers = document.querySelectorAll('.answer')
@@ -24,14 +6,8 @@ const b_text = document.getElementById('b-text')
 const c_text = document.getElementById('c-text')
 const d_text = document.getElementById('d-text')
 
-//const submitBtn = document.getElementById('submitBtn')
-//const nextBtn = document.getElementById('nextBtn')
-
 let currQuestion = 0
 let quizScore = 0
-
-//document.getElementById("loadBtn").addEventListener("click", quizGenerator)
-//enableButton();
 
 function resetSelection() {
     answers.forEach(answer => answer.checked = false)
@@ -52,8 +28,9 @@ function getAnswer() {
 }
 
 async function quizGenerator() {
-    currURL = url + "/quiz";
-    const response = await fetch(currURL)
+    //const url = "http://localhost:3000/api/getQuestions"   // for testing
+    const url = "https://just-enough-server.azurewebsites.net/api/getQuestions"
+    const response = await fetch(url)
     const quizData = await response.json()
 
     resetSelection()
@@ -74,7 +51,6 @@ async function quizGenerator() {
         } else {
             result.innerHTML = `<h2>Incorrect! The correct answer is ${quizData[currQuestion].correct_answer}. </h2>`
         }
-        //nextBtn.disabled = false
     })
     
     nextBtn.addEventListener('click', () => {
@@ -96,5 +72,3 @@ async function quizGenerator() {
 }
 
 document.getElementById("loadBtn").addEventListener("click", quizGenerator)
-
-// End Quiz
