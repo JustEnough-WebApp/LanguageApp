@@ -41,4 +41,7 @@ https://www.geeksforgeeks.org/how-to-send-response-from-server-to-client-using-n
 Meriam-Webster Dictionary: https://dictionaryapi.com  
 Meriam-Webster Spanish-English Translation: https://dictionaryapi.com  
 DeepL Translate: https://www.deepl.com/docs-api  
+
+### Images:
+https://www.freepik.com/
   
