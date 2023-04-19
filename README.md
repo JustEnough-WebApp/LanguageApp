@@ -28,7 +28,7 @@ Otherwise, download this repository, and install express, mongoose, and mongodb 
 your local machine.   
      
     
-## CREDIT:   
+## Credit:   
 ### Connecting Server and Client Tutorials:   
 https://dev.to/gbudjeakp/how-to-connect-your-client-side-to-your-server-side-using-node-and-express-2i71  
 https://www.geeksforgeeks.org/how-to-send-response-from-server-to-client-using-node-js-and-express-js/  
