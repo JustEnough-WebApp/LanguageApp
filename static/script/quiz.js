@@ -14,7 +14,6 @@ var currQuestion
 var quizScore 
 
 async function initiateQuiz() {
-    //var data = {"language": "", "type": ""};
     let language = document.getElementById('language').value
     let type = document.getElementById('category').value
 
