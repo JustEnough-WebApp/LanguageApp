@@ -14,8 +14,18 @@ var currQuestion
 var quizScore 
 
 async function initiateQuiz() {
-    const response = await fetch(url)
+    //var data = {"language": "", "type": ""};
+    let language = document.getElementById('language').value
+    let type = document.getElementById('category').value
+
+    const response  = await fetch(url, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"language": language, "type": type})
+    }); 
+
     quizData = await response.json()
+
     currQuestion = 0
     quizScore = 0
     generateQuiz()
@@ -43,6 +53,8 @@ function generateQuiz() {
     resetSelection()
     resetResult()
 
+    questionNum.innerHTML = `<h4>Question ${currQuestion + 1}</h4>`
+
     const currData = quizData[currQuestion]
     question.innerHTML = currData.question
     a_text.innerHTML = currData.answer_a
@@ -68,7 +80,7 @@ function getNextQuestion() {
         }
         currQuestion++
     
-        if(currQuestion < quizData.length) {
+        if (currQuestion < quizData.length) {
             generateQuiz()
         } else {
             quiz.innerHTML = `
