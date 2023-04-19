@@ -19,7 +19,7 @@ Just Enough is a simple website that aims to help users learn some basics and in
 of some new langauges. There is a Flashcard tab where users can study the included terms and their 
 English translations, and there is a Quiz tab where they can put their new knowledge to the test. 
 Additionally, there is a Dictionary tab where users can search any English word and get the English
- definition, and a web-generated translation into every language included on this site.  
+ definition and a web-generated translation into every language included on this site.  
    
      
 ## Build Instructions:  
