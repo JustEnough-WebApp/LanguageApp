@@ -24,7 +24,7 @@ Additionally, there is a Dictionary tab where users can search any English word 
    
      
 ## Build Instructions:  
-A link to our hosted web website is included [here](https://just-enough.azurewebsites.net).  
+A link to our hosted website is included [here](https://just-enough.azurewebsites.net).  
 Otherwise, download this repository, and install express, mongoose, and mongodb via Node to run on 
 your local machine.   
      
