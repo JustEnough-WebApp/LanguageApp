@@ -33,18 +33,15 @@ your local machine.
 ### Connecting Server and Client Tutorials:   
 https://dev.to/gbudjeakp/how-to-connect-your-client-side-to-your-server-side-using-node-and-express-2i71  
 https://www.geeksforgeeks.org/how-to-send-response-from-server-to-client-using-node-js-and-express-js/  
+          
+### Images:
+https://www.freepik.com/
     
- [TODO]   
+### Flashcard (Flipping Card):    
+https://www.w3schools.com/howto/howto_css_flip_card.asp   
      
-    
+   
 ### API's Used:  
 Meriam-Webster Dictionary: https://dictionaryapi.com  
 Meriam-Webster Spanish-English Translation: https://dictionaryapi.com  
 DeepL Translate: https://www.deepl.com/docs-api  
-
-### Images:
-https://www.freepik.com/
-
-### Flashcard (Flipping Card):
-https://www.w3schools.com/howto/howto_css_flip_card.asp
-  
