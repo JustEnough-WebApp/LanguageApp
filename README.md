@@ -44,4 +44,7 @@ DeepL Translate: https://www.deepl.com/docs-api
 
 ### Images:
 https://www.freepik.com/
+
+### Flashcard (Flipping Card):
+https://www.w3schools.com/howto/howto_css_flip_card.asp
   
