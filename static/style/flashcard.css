@@ -32,7 +32,7 @@ p {
     text-align: center;
     margin: auto;
     background-color: transparent;
-    width: 250px;;
+    width: 30vh;
     height: 300px;
     border: 1px solid rgb(51, 51, 188);
     perspective: 1000px;
@@ -41,7 +41,7 @@ p {
     text-align: center;
     margin: auto;
     background-color: transparent;
-    width: 250px;;
+    width: 30vw;
     height: 300px;
     border: 1px solid rgb(51, 51, 188);
     perspective: 1000px;
