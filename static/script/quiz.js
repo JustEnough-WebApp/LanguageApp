@@ -1,4 +1,5 @@
 const url = "https://just-enough-server.azurewebsites.net/api/getQuestions"
+//const url = "http://localhost:3000/api/getQuestions";
 
 var quizData
 
