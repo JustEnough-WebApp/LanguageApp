@@ -57,11 +57,61 @@
         <br>
         <br>
 
-        <div id="flashcard">
-            <p id="word">Word 1</p>
-            <p id="definition">Definition 1</p>
-            <button id="show-def-button" onclick="toggleDefinition()">Show Definition</button>
-            <button onclick="nextCard()">Next Card</button>
+        <h1 id="title" class="mb-3">Welcome to Flashcard</h1> 
+        <p class="mb-5"><i>Start the flashcard!</i></p>
+        <div class="d-grid align-items-center justify-content-center">
+            <!-- Button to Open the Modal -->
+            <button type="button" id="loadCardBtn" class="btn btn-outline-primary rounded-pill btn-md mb-5" data-bs-toggle="modal" data-bs-target="#cardModal">
+                Start Learning 
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="cardModal">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+            
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <h4 class="modal-title">Flashcard</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <!-- Load Demo Flashcard -->
+                            <div class="container-sm" id="card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <h2 id="word">Word</h2>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h2 id="definition">Definition</h2>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                                <div class="quiz-footer mb-3 text-center">
+                                    <button type="button" id= "nextCardBtn" class="btn btn-outline-primary btn-md">Next Card</button>
+                                </div>
+
+                            </div>
+                        </div>
+                
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save and Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- TODO: Add image -->
+            <img class="img-fluid mt-5" src="" alt="hello"> 
         </div>
 
     </body>
