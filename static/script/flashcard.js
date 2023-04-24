@@ -18,7 +18,7 @@ async function initiateCard() {
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify({"language": Spanish, "type": color})
     }); */
-	
+
     const response = await fetch(url)
 
     cardData = await response.json()
@@ -32,7 +32,7 @@ async function generateCard() {
 	cardNum.innerHTML = `<h4>Card ${currCard + 1}</h4>`
 
     const currData = cardData[currCard]
-    word.innerHTML = currData.enlish
+    word.innerHTML = currData.english
     definition.innerHTML = currData.language
     console.log("reached end of generate")
 };
