@@ -32,15 +32,6 @@ p {
     text-align: center;
     margin: auto;
     background-color: transparent;
-    width: 30vh;
-    height: 300px;
-    border: 1px solid rgb(51, 51, 188);
-    perspective: 1000px;
-}
-.flip-card {
-    text-align: center;
-    margin: auto;
-    background-color: transparent;
     width: 30vw;
     height: 300px;
     border: 1px solid rgb(51, 51, 188);
