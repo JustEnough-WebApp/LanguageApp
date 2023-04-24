@@ -60,7 +60,7 @@
         <p class="mb-5"><i>Start the flashcard!</i></p>
         <div class="d-grid align-items-center justify-content-center">
             <!-- Button to Open the Modal -->
-            <button type="button" id="loadCardBtn" class="btn btn-outline-primary btn-md mb-5" data-bs-toggle="modal" data-bs-target="#cardTypeModal">
+            <button type="button" class="btn btn-outline-primary btn-md mb-5" data-bs-toggle="modal" data-bs-target="#cardTypeModal">
                 Start Learning 
             </button>
 
@@ -80,7 +80,7 @@
                         <div class="modal-body">
                             <!-- Load Language List -->
                             <div class="container-md mt-3">
-                                <select class="form-select" id="language">
+                                <select class="form-select" id="cardLanguage">
                                     <option selected>Select...</option>
                                     <option value="German">German</option>
                                     <option value="Spanish">Spanish</option>
@@ -114,7 +114,7 @@
                         <div class="modal-body">
                             <!-- Load Category List -->
                             <div class="container-md mt-3">
-                                <select class="form-select" id="category">
+                                <select class="form-select" id="cardCategory">
                                     <option selected>Select...</option>
                                     <option value="color">Colors</option>
                                     <option value="common phrase">Common Words/Phrases</option>
@@ -158,19 +158,19 @@
                             <div class="container-sm" id="card">
                                 <div class="flip-card">
                                     <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <h2 id="word">Word</h2>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h2 id="definition">Definition</h2>
-                                    </div>
+                                        <div class="flip-card-front">
+                                            <h2 id="word">Word</h2>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <h2 id="definition">Definition</h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <br>
 
                                 <div class="quiz-footer mb-3 text-center">
-                                    <button type="button" id= "nextCardBtn" class="btn btn-outline-primary btn-md" onclick="getNextCard()">
+                                    <button type="button" id="nextCardBtn" class="btn btn-outline-primary btn-md" onclick="getNextCard()">
                                         Next Card</button>
                                 </div>
 
