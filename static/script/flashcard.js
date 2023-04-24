@@ -10,16 +10,14 @@ const definition = document.getElementById('definition')
 var currCard
 
 async function initiateCard() {
-    //let language = document.getElementById('language').value
-    //let type = document.getElementById('category').value
+    let language = document.getElementById('language').value
+    let type = document.getElementById('category').value
 
-    /*const response  = await fetch(url, {
+    const response  = await fetch(url, {
         method: 'POST',
         headers: {"Content-type": "application/json; charset=UTF-8"},
-        body: JSON.stringify({"language": Spanish, "type": color})
-    }); */
-
-    const response = await fetch(url)
+        body: JSON.stringify({"language": language, "type": type})
+    }); 
 
     cardData = await response.json()
 
@@ -27,7 +25,7 @@ async function initiateCard() {
     generateCard()
 }
 
-async function generateCard() {
+function generateCard() {
 
 	cardNum.innerHTML = `<h4>Card ${currCard + 1}</h4>`
 
