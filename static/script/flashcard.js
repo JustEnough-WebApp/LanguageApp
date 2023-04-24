@@ -6,12 +6,11 @@ var cardData
 const word = document.getElementById('word')
 const definition = document.getElementById('definition')
         
-
 var currCard
 
 async function initiateCard() {
-    let language = document.getElementById('language').value
-    let type = document.getElementById('category').value
+    let language = document.getElementById('cardLanguage').value
+    let type = document.getElementById('cardCategory').value
 
     const response  = await fetch(url, {
         method: 'POST',
@@ -27,7 +26,7 @@ async function initiateCard() {
 
 function generateCard() {
 
-	cardNum.innerHTML = `<h4>Card ${currCard + 1}</h4>`
+	cardNum.innerHTML = `<h4>Word ${currCard + 1}</h4>`
 
     const currData = cardData[currCard]
     word.innerHTML = currData.english
