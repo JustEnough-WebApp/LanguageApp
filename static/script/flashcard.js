@@ -33,7 +33,7 @@ async function generateCard() {
 
     const currData = cardData[currCard]
     word.innerHTML = currData.english
-    definition.innerHTML = currData.language
+    definition.innerHTML = currData.translation
     console.log("reached end of generate")
 };
 
