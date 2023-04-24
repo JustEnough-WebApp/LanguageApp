@@ -59,9 +59,19 @@
         <br>
         <!--SEARCHING BAR-->
         <form class="d-flex w-30">
-            <input id="dictSearch" class="form-control rounded-pill" type="search" placeholder="Search">
-            <button onclick="fillFields()" type="button">Search!</button>
+            <input id="dictSearch" class="form-control rounded-pill" type="search" placeholder="Search" onclick="this.value='';">
+            <button id="searchButton" onclick="fillFields()" type="button">Search!</button>   
         </form>
+
+        <script src="script/dictionary.js"></script>
+        <script>
+        document.getElementById("dictSearch").addEventListener("keydown", function(event) {
+            if (event.keyCode === 13) {
+            fillFields();
+            event.preventDefault();
+            }
+        });
+        </script>
         <br><br>
 
         <h4>English Definition:</h4>
