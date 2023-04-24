@@ -51,6 +51,27 @@
                 </div> 
             </div>
         </nav>
+        
+        <body onload="updateText()">
+            <h1 id="dayOfWeek"></h1>
+            <script>
+              function updateText() {
+                var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var today = new Date();
+                var currentDay = today.getDay();
+                document.getElementById("dayOfWeek").innerHTML = daysOfWeek[currentDay];
+                setTimeout(updateText, getNextUpdate());
+              }
+        
+              function getNextUpdate() {
+                var now = new Date();
+                var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+                var midnight = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0, 0, 0);
+                var timeUntilMidnight = midnight - now;
+                return timeUntilMidnight;
+              }
+            </script>
+          </body>
 
         <h1 id="title" class="">Just Enough</h1> 
             <p id="title" class="">Online vocabulary learning website</p> 
