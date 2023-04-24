@@ -11,7 +11,7 @@ const b_text = document.getElementById('b-text')
 const c_text = document.getElementById('c-text')
 const d_text = document.getElementById('d-text')
 
-var currQuestion
+var currQuestion 
 var quizScore 
 
 async function initiateQuiz() {

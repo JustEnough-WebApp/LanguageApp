@@ -61,7 +61,8 @@
         <p class="mb-5"><i>Start the flashcard!</i></p>
         <div class="d-grid align-items-center justify-content-center">
             <!-- Button to Open the Modal -->
-            <button type="button" id="loadCardBtn" class="btn btn-outline-primary rounded-pill btn-md mb-5" data-bs-toggle="modal" data-bs-target="#cardModal">
+            <button type="button" id="loadCardBtn" class="btn btn-outline-primary rounded-pill btn-md mb-5" data-bs-toggle="modal" data-bs-target="#cardModal"
+            onclick="initiateCard()">
                 Start Learning 
             </button>
 
@@ -72,7 +73,7 @@
             
                         <!-- Modal Header -->
                         <div class="modal-header">
-                        <h4 class="modal-title">Flashcard</h4>
+                        <h4 class="modal-title" id="cardNum" >Flashcard </h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                 
@@ -94,7 +95,8 @@
                             <br>
 
                                 <div class="quiz-footer mb-3 text-center">
-                                    <button type="button" id= "nextCardBtn" class="btn btn-outline-primary btn-md">Next Card</button>
+                                    <button type="button" id= "nextCardBtn" class="btn btn-outline-primary btn-md" onclick="getNextCard()">
+                                        Next Card</button>
                                 </div>
 
                             </div>
