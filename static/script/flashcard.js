@@ -3,8 +3,8 @@ const url = "https://just-enough-server.azurewebsites.net/api/getFlashcards"
 
 var cardData
 
-const translatedWord = document.getElementById('translatedWord')
-const englishWord = document.getElementById('englishWord')
+const cardFront = document.getElementById('cardFront')
+const cardBack = document.getElementById('cardBack')
         
 var currCard
 
@@ -28,8 +28,8 @@ function generateCard() {
 	cardNum.innerHTML = `<h4>Word ${currCard + 1}</h4>`
 
     const currData = cardData[currCard]
-    translatedWord.innerHTML = currData.translation
-    englishWord.innerHTML = currData.english
+    cardFront.innerHTML = currData.translation
+    cardBack.innerHTML = currData.english
 };
 
 function getNextCard() {
