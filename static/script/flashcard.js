@@ -5,12 +5,16 @@ var cardData
 
 const cardFront = document.getElementById('cardFront')
 const cardBack = document.getElementById('cardBack')
+
+const btnCont = document.getElementById('contBtn')
+const btnStart = document.getElementById('startBtn')
+
+var language
+var type
         
 var currCard
 
 async function initiateCard() {
-    let language = document.getElementById('cardLanguage').value
-    let type = document.getElementById('cardCategory').value
 
     const response  = await fetch(url, {
         method: 'POST',
@@ -41,3 +45,22 @@ function getNextCard() {
         generateCard();
     }
 }
+
+function disableContBtn() {
+    if (document.getElementById('cardLanguage').value === '') {
+        btnCont.setAttribute("disabled", "disabled")
+    } else {
+        btnCont.removeAttribute("disabled")
+        language = document.getElementById('cardLanguage').value
+    }
+}
+
+function disableStartBtn() {
+    if (document.getElementById('cardCategory').value === '') {
+        btnStart.setAttribute("disabled", "disabled")
+    } else {
+        btnStart.removeAttribute("disabled")
+        type = document.getElementById('cardCategory').value
+    }
+}
+

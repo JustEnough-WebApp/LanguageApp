@@ -13,13 +13,16 @@ const d_text = document.getElementById('d-text')
 
 const btnSubmit = document.getElementById('submitBtn')
 const btnNext = document.getElementById('nextBtn')
+const btnCont = document.getElementById('contBtn')
+const btnStart = document.getElementById('startBtn')
+
+var language
+var type
 
 var currQuestion 
 var quizScore 
 
 async function initiateQuiz() {
-    let language = document.getElementById('language').value
-    let type = document.getElementById('category').value
 
     const response  = await fetch(url, {
         method: 'POST',
@@ -69,7 +72,6 @@ function generateQuiz() {
     b_text.innerHTML = currData.answer_b
     c_text.innerHTML = currData.answer_c
     d_text.innerHTML = currData.answer_d
-    console.log("reached end of generate")
    
 }
 
@@ -146,4 +148,24 @@ function disableHandler () {
 function enableHandler() {
     answers.forEach(answer => answer.removeAttribute("disabled"))
 }
+
+function disableContBtn() {
+    if (document.getElementById('language').value === '') {
+        btnCont.setAttribute("disabled", "disabled")
+    } else {
+        btnCont.removeAttribute("disabled")
+        language = document.getElementById('language').value
+    }
+}
+
+function disableStartBtn() {
+    if (document.getElementById('category').value === '') {
+        btnStart.setAttribute("disabled", "disabled")
+    } else {
+        btnStart.removeAttribute("disabled")
+        type = document.getElementById('category').value
+    }
+}
+
+
 
