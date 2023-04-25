@@ -12,7 +12,7 @@ h1 {
     font-family: Didot, serif;
     font-size: 100px;
     color: rgb(51, 51, 188);
-   padding-top: 70px;
+    padding-top: 70px;
 }
 
 h2 {
@@ -20,6 +20,10 @@ h2 {
     font-family: Didot, serif;
     font-size: 40px;
     padding-top: 40px;
+}
+
+h4 {
+  color: rgb(51, 51, 188);
 }
 
 p {
