@@ -11,6 +11,9 @@ const b_text = document.getElementById('b-text')
 const c_text = document.getElementById('c-text')
 const d_text = document.getElementById('d-text')
 
+const btnSubmit = document.getElementById('submitBtn')
+const btnNext = document.getElementById('nextBtn')
+
 var currQuestion 
 var quizScore 
 
@@ -44,14 +47,18 @@ function getAnswer() {
     answers.forEach(answer => {
         if (answer.checked) {
             selectedAnswer = answer.id
-        }
+        } 
     })
+
     return selectedAnswer
 }
 
 function generateQuiz() {
     resetSelection()
     resetResult()
+
+    disableBtnSubmit()
+    disableBtnNext()
 
     questionNum.innerHTML = `<h4>Question ${currQuestion + 1}</h4>`
 
@@ -62,6 +69,7 @@ function generateQuiz() {
     c_text.innerHTML = currData.answer_c
     d_text.innerHTML = currData.answer_d
     console.log("reached end of generate")
+   
 }
 
 function submitAnswer() {
@@ -84,6 +92,8 @@ function submitAnswer() {
     } else {
        result.innerHTML = `<h2>Incorrect! The correct answer is "${correctText}". </h2>`
     }
+
+    enableBtnNext()
 }
 
 function getNextQuestion() {
@@ -103,6 +113,21 @@ function getNextQuestion() {
         }
 }
 
-function enableButton() {
+function enableBtnSubmit(answer) {
+    if (answer.checked == true) {
+        btnSubmit.removeAttribute("disabled")
+    } 
+}
 
+function enableBtnNext() {
+    btnNext.removeAttribute("disabled")
+
+}
+
+function disableBtnSubmit() {
+    btnSubmit.setAttribute("disabled", "disabled")
+}
+
+function disableBtnNext() {
+    btnNext.setAttribute("disabled", "disabled")
 }
