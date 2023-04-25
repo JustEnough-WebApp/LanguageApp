@@ -7,7 +7,9 @@ const spanishKey = "?key=23e33a70-d854-46ff-9d3f-27667aef8cd6";
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
 const deeplKsey = "2b2f1cdb-c324-a0da-7107-dbecc04e19f1:fx";
 
+// frenchExtension
 const germanExtension = "api/getGerman";
+//norwegianExtension
 
 // TODO: add functions for future langauges as project progresses
 function fillFields() {
@@ -15,6 +17,13 @@ function fillFields() {
     getSpanish();
     getGerman();
 }
+
+document.getElementById("dictSearch").addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+    fillFields();
+    event.preventDefault();
+    }
+});
 
 async function ping() {
     pingURL = serverURL + "/api/ping";
@@ -56,6 +65,8 @@ async function getSpanish() {
     return;
 }
 
+// TODO: getFrench(), same as getGerman()
+
 async function getGerman() {
     let word = document.getElementById('dictSearch').value;
     let apiURL = serverURL + germanExtension;
@@ -70,3 +81,5 @@ async function getGerman() {
     document.getElementById("germanTranslation").innerHTML = translation;
     return;
 }
+
+// TODO: getNorwegian(), same as getGerman()

@@ -16,7 +16,6 @@
 
         <!-- External files -->
         <link rel="stylesheet" href="./style/dictionary.css">
-        <script src="./script/dictionary.js"></script>
     </head>
 
     <body>
@@ -63,15 +62,6 @@
             <button id="searchButton" onclick="fillFields()" type="button">Search!</button>   
         </form>
 
-        <script src="script/dictionary.js"></script>
-        <script>
-        document.getElementById("dictSearch").addEventListener("keydown", function(event) {
-            if (event.keyCode === 13) {
-            fillFields();
-            event.preventDefault();
-            }
-        });
-        </script>
         <br><br>
 
         <h4>English Definition:</h4>
@@ -84,9 +74,14 @@
         
         <br><br>
 
+        <!-- French -->
+
         <h4>German Translation:</h4>
         <p id="germanTranslation"></p>
+
+        <!-- Norwegian -->
         
         <br><br><br>
+        <script src="./script/dictionary.js"></script>
     </body>
 </html>
