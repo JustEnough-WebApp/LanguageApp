@@ -56,6 +56,7 @@ function getAnswer() {
 function generateQuiz() {
     resetSelection()
     resetResult()
+    enableHandler()
 
     disableBtnSubmit()
     disableBtnNext()
@@ -93,6 +94,8 @@ function submitAnswer() {
        result.innerHTML = `<h2>Incorrect! The correct answer is "${correctText}". </h2>`
     }
 
+    disableHandler()
+    disableBtnSubmit()
     enableBtnNext()
 }
 
@@ -131,3 +134,16 @@ function disableBtnSubmit() {
 function disableBtnNext() {
     btnNext.setAttribute("disabled", "disabled")
 }
+
+function disableHandler () {
+    for(let i = 0 ; i< answers.length; i++){
+        if(answers[i].checked === false){
+            answers[i].disabled = 'true';
+        }  
+    }
+}
+
+function enableHandler() {
+    answers.forEach(answer => answer.removeAttribute("disabled"))
+}
+
