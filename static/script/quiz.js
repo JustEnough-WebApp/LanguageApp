@@ -65,12 +65,25 @@ function generateQuiz() {
 }
 
 function submitAnswer() {
-    const answer = getAnswer() 
-        if (answer === quizData[currQuestion].correct_answer) {
-            result.innerHTML = `<h2>Correct!</h2>`
-        } else {
-            result.innerHTML = `<h2>Incorrect! The correct answer is ${quizData[currQuestion].correct_answer}. </h2>`
-        }
+    const answer = getAnswer();
+    var correctText
+
+    if (quizData[currQuestion].correct_answer === 'a'){
+        correctText = quizData[currQuestion].answer_a
+    } else if (quizData[currQuestion].correct_answer === 'b'){
+        correctText = quizData[currQuestion].answer_b
+    } else if (quizData[currQuestion].correct_answer === 'c'){
+        correctText = quizData[currQuestion].answer_c
+    } else if (quizData[currQuestion].correct_answer === 'd'){
+        correctText = quizData[currQuestion].answer_d
+    }
+
+    if (answer === quizData[currQuestion].correct_answer) {
+        result.innerHTML = `<h2>Correct!</h2>`
+
+    } else {
+       result.innerHTML = `<h2>Incorrect! The correct answer is "${correctText}". </h2>`
+    }
 }
 
 function getNextQuestion() {
@@ -88,4 +101,8 @@ function getNextQuestion() {
             <button type="button class="btn btn-primary btn-sm onclick="location.reload()">Reload</button>
             `
         }
+}
+
+function enableButton() {
+
 }
