@@ -6,3 +6,24 @@
     color: whitesmoke;
     font-family: Didot, serif;
 }
+
+h1 {
+    text-align: center;
+    font-family: Didot, serif;
+    font-size: 100px;
+    color: rgb(51, 51, 188);
+   padding-top: 70px;
+}
+
+h2 {
+    text-align: center;      
+    font-family: Didot, serif;
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

@@ -6,8 +6,7 @@
     color: whitesmoke;
     font-family: Didot, serif;
 }
-
-    
+  
 h1 {
     text-align: center;
     font-family: Didot, serif;
@@ -70,11 +69,3 @@ p {
     color: white;
     transform: rotateY(180deg);
   }
-
-/*#definition {
-    display: none;
-}
-
-button {
-    margin-top: 15px;
-}*/
