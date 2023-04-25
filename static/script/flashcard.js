@@ -20,13 +20,6 @@ async function initiateCard() {
 
     cardData = await response.json()
 
-    try {
-        word.innerHTML = cardData[0].shortdef[0];
-    } catch (e) {
-        word.innerHTML = 
-        "ERROR: cannot find word";
-    }
-
     currCard = 0
     generateCard()
 }

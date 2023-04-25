@@ -65,7 +65,7 @@ function generateQuiz() {
 }
 
 function submitAnswer() {
-    const answer = getAnswer();
+    const answer = getAnswer()
     var correctText
 
     if (quizData[currQuestion].correct_answer === 'a'){
