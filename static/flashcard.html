@@ -29,7 +29,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
@@ -49,9 +49,6 @@
                             <a class="nav-link" href="dictionary.html" target="_self">Dictionary</a>
                         </li> 
                     </ul>
-                    <!--LOGIN & SIGN UP BUTTONS-->
-                    <a href="login.html" class="btn btn-light px-4 me-2 fw-bold">Login</a>
-                    <a href="register.html" class="btn btn-light px-3 fw-bold">Sign up</a>
                 </div> 
             </div>
         </nav>
@@ -60,8 +57,8 @@
         <p class="mb-5"><i>Start the flashcard to learn new vocab more effectively!!</i></p>
         <div class="d-grid align-items-center justify-content-center">
             <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-outline-primary btn-lg mb-5" data-bs-toggle="modal" data-bs-target="#cardTypeModal">
-                Start Learning 
+            <button type="button" class="btn btn-outline-primary btn-lg mb-5" data-bs-toggle="modal" data-bs-target="#cardTypeModal"
+            onclick="disableContBtn()">Start Learning 
             </button>
 
 
@@ -80,8 +77,8 @@
                         <div class="modal-body">
                             <!-- Load Language List -->
                             <div class="container-md mt-3">
-                                <select class="form-select" id="cardLanguage">
-                                    <option selected>Select...</option>
+                                <select class="form-select" id="cardLanguage" name="cardLanguage" onchange="disableContBtn()">
+                                    <option value="" selected>Select...</option>
                                     <option value="French">French</option>
                                     <option value="German">German</option>
                                     <option value="Norwegian">Norwegian</option>
@@ -92,8 +89,8 @@
                 
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-target="#cardCategoryModal" data-bs-toggle="modal" data-bs-dismiss="modal">
-                                Save and Continue</button>
+                            <button type="button" class="btn btn-primary" data-bs-target="#cardCategoryModal" data-bs-toggle="modal" data-bs-dismiss="modal"
+                            id="contBtn" onclick="disableStartBtn()">Save and Continue</button>
                         </div>
                     </div>
                 </div>
@@ -115,8 +112,8 @@
                         <div class="modal-body">
                             <!-- Load Category List -->
                             <div class="container-md mt-3">
-                                <select class="form-select" id="cardCategory">
-                                    <option selected>Select...</option>
+                                <select class="form-select" id="cardCategory" name="cardCategory" onchange="disableStartBtn()">
+                                    <option value="" selected>Select...</option>
                                     <option value="color">Colors</option>
                                     <option value="common phrase">Common Words/Phrases</option>
                                     <option value="day">Days/Time</option>
@@ -135,7 +132,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-bs-target="#cardModal" data-bs-toggle="modal" data-bs-dismiss="modal" 
-                            onclick="initiateCard()">Save and Start</button>
+                            id="startBtn" onclick="initiateCard()">Save and Start</button>
                         </div>
                     </div>
                 </div>
@@ -159,7 +156,7 @@
                             <!-- Load Demo Flashcard -->
                             <div class="container-md mt-3" id="card">
                                 <div class="card-header mb-3">
-                                    <div class="flip-card">
+                                    <div class="flip-card shadow">
                                         <div class="flip-card-inner">
                                             <div class="flip-card-front">
                                                 <h2 id="cardFront">Word</h2>
@@ -177,22 +174,24 @@
                                     Next Card</button>
                             </div>
 
+                            <div>
+                                <img class="img-fluid mt-5" src="./images/modal.jpg" alt="hello">
+                            </div>
+
                         </div>
                     </div> 
                 
                         <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Save and Close</button>
+                        <div class="modal-footer bg-light">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div>
-            <!-- TODO: Add image -->
-            <img class="img-fluid mt-5" src="" alt="image"> 
-        </div>
+          <div>
+            <img class="img-fluid" src="./images/flashcard.jpg" alt="hello">
+          </div>
         <script src="./script/flashcard.js"></script>
     </body>
 </html>
