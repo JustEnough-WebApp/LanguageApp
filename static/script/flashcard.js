@@ -29,7 +29,7 @@ async function initiateCard() {
 }
 
 function generateCard() {
-	cardNum.innerHTML = `<h4>Word ${currCard + 1}</h4>`
+	cardNum.innerHTML = `<h4>Word ${currCard + 1} / ${cardData.length}</h4>`
 
     const currData = cardData[currCard]
     cardFront.innerHTML = currData.translation
