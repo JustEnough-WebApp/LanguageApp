@@ -64,7 +64,7 @@ function generateQuiz() {
     disableBtnSubmit()
     disableBtnNext()
 
-    questionNum.innerHTML = `<h4>Question ${currQuestion + 1}</h4>`
+    questionNum.innerHTML = `<h4>Question ${currQuestion + 1} / ${quizData.length}</h4>`
 
     const currData = quizData[currQuestion]
     question.innerHTML = currData.question
