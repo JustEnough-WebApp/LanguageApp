@@ -159,15 +159,44 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-target="#myModal" data-bs-toggle="modal" data-bs-dismiss="modal" 
-                        onclick="testChecks()">Start</button>
+                        onclick="initiateLearning()">Start</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Second Modal End -->
         
+
+        <!-- Quiz Modal Start -->
+        <div class="modal fade" id="myModal" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title" id="questionNum">Learn</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                       <table id="learnTable"></table>
+                    </div>
+            
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left" data-bs-dismiss="modal">
+                        Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Quiz Modal End -->
+
         <div>
             <img class="img-fluid" src="./images/learn.jpg" alt="banner">
         </div>
+
     </body>
 </html>

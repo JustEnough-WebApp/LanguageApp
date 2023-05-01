@@ -1,4 +1,4 @@
-const url = "https://just-enough-server.azurewebsites.net/api/getList"
+const url = "https://just-enough-server.azurewebsites.net/api/getLearn"
 //const url = "http://localhost:3000/api/getList";   // for testing
 
 
@@ -6,7 +6,7 @@ const url = "https://just-enough-server.azurewebsites.net/api/getList"
 var languages = [];
 var types = [];
 
-function testChecks() {
+function getSelections() {
     languages = [];
     types = [];
 
@@ -46,14 +46,60 @@ function testChecks() {
 
 
 async function initiateLearning() {
+    getSelections();
+    var table = document.getElementById("learnTable");
+    table.innerHTML = "";
+
     const response  = await fetch(url, {
         method: 'POST',
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify({"languages": languages, "types": types})
     }); 
+    learnData = await response.json()  
+    
+    prevLanguage = "";
 
-    learnData = await response.json()
+    if (learnData.length > 0) {
+        initializeTable();
+        var rowNum = 1;
+        for (i = 0; i , learnData.length; i++) {
+            if (learnData[i].language != prevLanguage) {
+                // TODO: fix this block, it doesn't work right now
+                var extraSpace = table.insertRow(rowNum);
+                var cell = extraSpace.insertCell(0);
+                cell.innerHTML = "";
+                rowNum++;
+            }
 
-    currCard = 0
-    //generateTable()
+            var row = table.insertRow(rowNum);   
+            rowNum++;
+
+            var cellEnglish = row.insertCell(0);
+            var cellTranslation = row.insertCell(1);
+            var cellType = row.insertCell(2);
+            var cellLanguage = row.insertCell(3);
+    
+            cellEnglish.innerHTML = learnData[i].english;
+            cellTranslation.innerHTML = learnData[i].translation;
+            cellType.innerHTML = learnData[i].type;
+            cellLanguage.innerHTML = learnData[i].language;
+
+            prevLanguage = learnData[i].language;
+        }
+    }
+}
+
+function initializeTable() {
+    var table = document.getElementById("learnTable");
+    var row = table.insertRow(0);
+
+    var cellEnglish = row.insertCell(0);
+    var cellTranslation = row.insertCell(1);
+    var cellType = row.insertCell(2);
+    var cellLanguage = row.insertCell(3);
+
+    cellEnglish.innerHTML = "<b>English</b>";
+    cellTranslation.innerHTML = "<b>Translation</b>";
+    cellType.innerHTML = "<b>Type</b>";
+    cellLanguage.innerHTML = "<b>Language</b>";
 }
