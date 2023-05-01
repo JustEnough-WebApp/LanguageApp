@@ -1,8 +1,6 @@
 const url = "https://just-enough-server.azurewebsites.net/api/getLearn"
 //const url = "http://localhost:3000/api/getList";   // for testing
 
-
-
 var languages = [];
 var types = [];
 
