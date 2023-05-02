@@ -8,7 +8,10 @@
 }
 
 b {
-    font-size: 16pt;
+    text-align: center;
+    font-family: Didot, serif;
+    font-size: 24pt;
+    color: rgb(51, 51, 188);
 }
 
 h1 {
@@ -27,15 +30,14 @@ h2 {
 }
 
 table {
-    /* TODO */
-}
-
-tr {
-    /* TODO */
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
 }
 
 td {
-    /* TODO */
+    font-size: 18pt;
+    height: 20pt;
 }
 
 p {

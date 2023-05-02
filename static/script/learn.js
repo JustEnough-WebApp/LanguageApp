@@ -62,10 +62,12 @@ async function initiateLearning() {
         var rowNum = 1;
         for (i = 0; i , learnData.length; i++) {
             if (learnData[i].language != prevLanguage) {
-                // TODO: fix this block, it doesn't work right now
                 var extraSpace = table.insertRow(rowNum);
-                var cell = extraSpace.insertCell(0);
-                cell.innerHTML = "";
+                extraSpace.insertCell(0);
+                extraSpace.insertCell(1);
+                extraSpace.insertCell(2);
+                extraSpace.insertCell(3);
+                extraSpace.style.backgroundColor = "#3333bc";
                 rowNum++;
             }
 
