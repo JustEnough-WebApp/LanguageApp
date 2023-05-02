@@ -7,6 +7,14 @@
     font-family: Didot, serif;
 }
 
+div p {
+	display: inline-block;
+	margin-right: 10px;
+	text-align: center;      
+    font-family: Didot, serif;
+    font-size: 40px;
+	padding-top: 1px;
+}
     
 h1 {
     text-align: center;
@@ -33,20 +41,12 @@ p {
     height: 400px;
 }
 
-
-/*Wrapper*/
-.wrapper{
-    background-color: whitesmoke;
-    font-family: Didot, serif;
-    margin: 100px auto;
-    padding: 80px 20px;
-    position: static;
-    width: 20%;
-    font-size: 40px;
-}
-
 /*Vertical Sliding*/
 .slidingVertical{
+	text-align: center;      
+    font-family: Didot, serif;
+    font-size: 40px;
+    padding-top: 40px;
 	display: inline;
 	text-indent: 8px;
 }

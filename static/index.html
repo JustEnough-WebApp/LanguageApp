@@ -19,7 +19,7 @@
         <script src="./script.js"></script>
     </head>
 
-    <body>
+    <body onload="updateText()">
         <nav class = "navbar navbar-expand-sm navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="https://deadpoetsscrumciety.azurewebsites.net/" 
@@ -52,46 +52,43 @@
             </div>
         </nav>
         
-        <body onload="updateText()">
-            <h1 id="dayOfWeek"></h1>
-            <script>
-              function updateText() {
-                var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                var today = new Date();
-                var currentDay = today.getDay();
-                document.getElementById("dayOfWeek").innerHTML = daysOfWeek[currentDay];
-                setTimeout(updateText, getNextUpdate());
-              }
         
-              function getNextUpdate() {
-                var now = new Date();
-                var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-                var midnight = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0, 0, 0);
-                var timeUntilMidnight = midnight - now;
-                return timeUntilMidnight;
-              }
-            </script>
-          </body>
 
         <h1 id="title" class="">Just Enough</h1> 
-            <p id="title" class="">Online vocabulary learning website</p> 
-            <section class="wrapper">  
+            <p id="title" class="">Online vocabulary learning website</p>
+                
+           <div id="allText">
+                <p id="cyclingHello">
                 <div class="slidingVertical">
-                   <span>Bonjour</span>
-                   <span>Hola</span>
-                   <span>Privet</span>
-                   <!-- <span>Ciao</span>
-                   <span>Hei</span>
-                   <span>Konnichiwa</span>
-                   <span>Guten Tag</span>
-                   <span>Oi</span>
-                   <span>Yassou</span>
-                   <span>Shalom</span>-->
-                   <span>God dag</span>
-                   <span>Hello</span>
-                </div>
-              </section>
+                    <span>Hello</span>
+                    <span>Bonjour</span>
+                    <span>Hallo</span>
+                    <span>God dag</span>
+                    <span>Hola</span>
+                    </div>
+                </p>
+                <p id="todayIs" style="padding-left: 140px;">today is</p> 
+                <p id="dayOfWeek"></p>
+                <script>
+                function updateText() {
+                    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    var today = new Date();
+                    var currentDay = today.getDay();
+                    document.getElementById("dayOfWeek").innerHTML = daysOfWeek[currentDay];
+                    setTimeout(updateText, getNextUpdate());
+                }
             
+                function getNextUpdate() {
+                    var now = new Date();
+                    var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+                    var midnight = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0, 0, 0);
+                    var timeUntilMidnight = midnight - now;
+                    return timeUntilMidnight;
+                }
+                </script>
+            </body>
+           </div>
+          
             <div>
                 <img class="img-fluid" src="./images/landingpage.jpg" alt="hello">
             </div>
