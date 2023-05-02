@@ -15,8 +15,8 @@ const norwegianExtension = "api/getNorwegian";
 function fillFields() {
     getDefinition();
     getSpanish();
-    getGerman();
     getFrench();
+    getGerman();
     getNorwegian();
 }
 
