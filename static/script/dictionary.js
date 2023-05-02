@@ -16,6 +16,8 @@ function fillFields() {
     getDefinition();
     getSpanish();
     getGerman();
+    getFrench();
+    getNorwegian();
 }
 
 document.getElementById("dictSearch").addEventListener("keydown", function(event) {
