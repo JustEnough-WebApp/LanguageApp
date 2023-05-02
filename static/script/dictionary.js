@@ -66,6 +66,20 @@ async function getSpanish() {
 }
 
 // TODO: getFrench(), same as getGerman()
+async function getFrench() {
+    let word = document.getElementById('dictSearch').value;
+    let apiURL = serverURL + frenchExtension;
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
+    const translation = (await result.text()).valueOf(Promise)
+    console.log(translation);
+    document.getElementById("frenchTranslation").innerHTML = translation;
+    return;
+}
 
 async function getGerman() {
     let word = document.getElementById('dictSearch').value;
@@ -83,3 +97,17 @@ async function getGerman() {
 }
 
 // TODO: getNorwegian(), same as getGerman()
+async function getNorwegian() {
+    let word = document.getElementById('dictSearch').value;
+    let apiURL = serverURL + norwegianExtension;
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
+    const translation = (await result.text()).valueOf(Promise)
+    console.log(translation);
+    document.getElementById("norwegianTranslation").innerHTML = translation;
+    return;
+}
