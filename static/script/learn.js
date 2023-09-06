@@ -4,6 +4,10 @@ const url = "https://just-enough-server.azurewebsites.net/api/getLearn"
 var languages = [];
 var types = [];
 
+
+document.getElementById("btnStart").addEventListener("click", initiateLearning);
+
+
 function getSelections() {
     languages = [];
     types = [];
