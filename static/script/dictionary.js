@@ -11,6 +11,12 @@ const frenchExtension = "api/getFrench";
 const germanExtension = "api/getGerman";
 const norwegianExtension = "api/getNorwegian";
 
+const inputDictSearch = document.getElementById("inputDictSearch");
+
+inputDictSearch.addEventListener("click", inputDictSearch.value = '');
+document.getElementById("btnSearch").addEventListener("click", fillFields);
+
+
 // TODO: add functions for future langauges as project progresses
 function fillFields() {
     getDefinition();
