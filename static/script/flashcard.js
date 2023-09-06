@@ -14,6 +14,10 @@ var type
         
 var currCard
 
+document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
+document.getElementById("btnNextCard").addEventListener("click", getNextCard);
+document.getElementById("btnStudy").addEventListener("click", disableContBtn);
+
 async function initiateCard() {
 
     const response  = await fetch(url, {
@@ -46,7 +50,7 @@ function getNextCard() {
     }
 }
 
-function getLastCard() {
+function getPrevCard() {
     currCard -= 1
     if (currCard >= 0) {
         generateCard()

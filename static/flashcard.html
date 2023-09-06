@@ -57,8 +57,8 @@
         <p class="mb-5"><i>Start the flashcard to learn new vocab more effectively!!</i></p>
         <div class="d-grid align-items-center justify-content-center">
             <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-outline-primary btn-lg mb-5" data-bs-toggle="modal" 
-                data-bs-target="#cardTypeModal" onclick="disableContBtn()">Start Studying 
+            <button type="button" id="btnStudy" class="btn btn-outline-primary btn-lg mb-5" 
+                data-bs-toggle="modal" data-bs-target="#cardTypeModal">Start Studying 
             </button>
 
 
@@ -170,9 +170,8 @@
                             </div>
                             <br>
                             <div class="card-footer mb-3 text-center">
-                                <button type="button" id="lastCardBtn" class="btn btn-outline-primary btn-md" onclick="getLastCard()">Last Card</button>
-                                <button type="button" id="nextCardBtn" class="btn btn-outline-primary btn-md" onclick="getNextCard()">
-                                    Next Card</button>
+                                <button type="button" id="btnPrevCard" class="btn btn-outline-primary btn-md">Last Card</button>
+                                <button type="button" id="btnNextCard" class="btn btn-outline-primary btn-md">Next Card</button>
                             </div>
 
                             <div>
