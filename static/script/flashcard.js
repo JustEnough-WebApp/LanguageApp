@@ -42,7 +42,17 @@ function getNextCard() {
         generateCard()
     } else {
         currCard = 0;
-        generateCard();
+        generateCard()
+    }
+}
+
+function getLastCard() {
+    currCard -= 1
+    if (currCard >= 0) {
+        generateCard()
+    } else {
+        currCard = cardData.length - 1
+        generateCard()
     }
 }
 
