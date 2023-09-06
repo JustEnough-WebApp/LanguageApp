@@ -13,8 +13,18 @@ const norwegianExtension = "api/getNorwegian";
 
 const inputDictSearch = document.getElementById("inputDictSearch");
 
-inputDictSearch.addEventListener("click", inputDictSearch.value = '');
+
+inputDictSearch.addEventListener("click", clearSearchBar);
 document.getElementById("btnSearch").addEventListener("click", fillFields);
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        fillFields();
+        event.preventDefault();
+    }
+});
+
 
 
 // TODO: add functions for future langauges as project progresses
@@ -26,12 +36,9 @@ function fillFields() {
     getNorwegian();
 }
 
-document.getElementById("dictSearch").addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) {
-    fillFields();
-    event.preventDefault();
-    }
-});
+function clearSearchBar() {
+    inputDictSearch.value = "";
+}
 
 async function ping() {
     pingURL = serverURL + "/api/ping";
@@ -41,7 +48,7 @@ async function ping() {
 }
 
 async function getDefinition() {
-    let word = document.getElementById('dictSearch').value;
+    let word = inputDictSearch.value;
     let apiURL = dictURL + word + dictKey;
     const response = await fetch(apiURL);
     const jsonObj = await response.json();
@@ -56,7 +63,7 @@ async function getDefinition() {
 }
 
 async function getSpanish() {
-    let word = document.getElementById('dictSearch').value;
+    let word = inputDictSearch.value;
     let apiURL = spanishURL + word + spanishKey;
     const response = await fetch(apiURL);
     const jsonObj = await response.json();
@@ -75,7 +82,7 @@ async function getSpanish() {
 
 // TODO: getFrench(), same as getGerman()
 async function getFrench() {
-    let word = document.getElementById('dictSearch').value;
+    let word = inputDictSearch.value;
     let apiURL = serverURL + frenchExtension;
     const result = await fetch(apiURL, {
         method: 'POST',
@@ -90,7 +97,7 @@ async function getFrench() {
 }
 
 async function getGerman() {
-    let word = document.getElementById('dictSearch').value;
+    let word = inputDictSearch.value;
     let apiURL = serverURL + germanExtension;
     const result = await fetch(apiURL, {
         method: 'POST',
@@ -104,9 +111,8 @@ async function getGerman() {
     return;
 }
 
-// TODO: getNorwegian(), same as getGerman()
 async function getNorwegian() {
-    let word = document.getElementById('dictSearch').value;
+    let word = inputDictSearch.value;
     let apiURL = serverURL + norwegianExtension;
     const result = await fetch(apiURL, {
         method: 'POST',
