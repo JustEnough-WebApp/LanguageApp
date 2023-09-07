@@ -2,6 +2,11 @@ const url = "https://just-enough-server.azurewebsites.net/api/getQuestions"
 //const url = "http://localhost:3000/api/getQuestions";
 
 var quizData
+var language
+var type
+
+var currQuestion 
+var quizScore 
 
 const quiz = document.getElementById('quiz')
 const question = document.getElementById('question')
@@ -11,16 +16,25 @@ const b_text = document.getElementById('b-text')
 const c_text = document.getElementById('c-text')
 const d_text = document.getElementById('d-text')
 
-const btnSubmit = document.getElementById('submitBtn')
-const btnNext = document.getElementById('nextBtn')
-const btnCont = document.getElementById('contBtn')
-const btnStart = document.getElementById('startBtn')
+const boxA = document.getElementById('boxA')
+const boxB = document.getElementById('boxB')
+const boxC = document.getElementById('boxC')
+const boxD = document.getElementById('boxD')
+const checkboxes = {boxA, boxB, boxC, boxD}
 
-var language
-var type
 
-var currQuestion 
-var quizScore 
+document.getElementById("btnSubmit").addEventListener("click", submitAnswer);
+document.getElementById("btnNext").addEventListener("click", getNextQuestion);
+
+document.getElementById("btnTakeQuiz").addEventListener("click", disableContBtn);
+document.getElementById("btnSaveCont").addEventListener("click", disableStartBtn);
+document.getElementById("btnStartQuiz").addEventListener("click", initiateQuiz);
+
+boxA.addEventListener("click", enableBtnSubmit)
+boxB.addEventListener("click", enableBtnSubmit)
+boxC.addEventListener("click", enableBtnSubmit)
+boxD.addEventListener("click", enableBtnSubmit)
+
 
 async function initiateQuiz() {
 
@@ -118,10 +132,8 @@ function getNextQuestion() {
         }
 }
 
-function enableBtnSubmit(answer) {
-    if (answer.checked == true) {
-        btnSubmit.removeAttribute("disabled")
-    } 
+function enableBtnSubmit() {
+    document.getElementById("btnSubmit").removeAttribute("disabled")
 }
 
 function enableBtnNext() {
@@ -166,6 +178,3 @@ function disableStartBtn() {
         type = document.getElementById('category').value
     }
 }
-
-
-
