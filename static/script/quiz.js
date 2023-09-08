@@ -26,14 +26,18 @@ const btnSubmit = document.getElementById('btnSubmit')
 const btnNext = document.getElementById('btnNext')
 const btnCont = document.getElementById('btnSaveCont')
 const btnStart = document.getElementById('btnStartQuiz')
+const btnTakeQuiz = document.getElementById('btnTakeQuiz')
 
 
-document.getElementById("btnSubmit").addEventListener("click", submitAnswer);
-document.getElementById("btnNext").addEventListener("click", getNextQuestion);
+btnSubmit.addEventListener("click", submitAnswer);
+btnNext.addEventListener("click", getNextQuestion);
 
-document.getElementById("btnTakeQuiz").addEventListener("click", disableContBtn);
-document.getElementById("btnSaveCont").addEventListener("click", disableStartBtn);
-document.getElementById("btnStartQuiz").addEventListener("click", initiateQuiz);
+btnTakeQuiz.addEventListener("click", disableContBtn);
+btnCont.addEventListener("click", disableStartBtn);
+btnStart.addEventListener("click", initiateQuiz);
+
+document.getElementById("language").addEventListener("change", disableContBtn);
+document.getElementById("category").addEventListener("change", disableStartBtn);
 
 boxA.addEventListener("click", enableBtnSubmit)
 boxB.addEventListener("click", enableBtnSubmit)
