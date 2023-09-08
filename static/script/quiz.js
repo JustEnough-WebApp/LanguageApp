@@ -42,8 +42,6 @@ boxD.addEventListener("click", enableBtnSubmit)
 
 
 async function initiateQuiz() {
-
-    console.log("reached")
     const response  = await fetch(url, {
         method: 'POST',
         headers: {"Content-type": "application/json; charset=UTF-8"},
@@ -51,7 +49,6 @@ async function initiateQuiz() {
     }); 
 
     quizData = await response.json()
-    console.log(quizData)
     currQuestion = 0
     quizScore = 0
     generateQuiz()
@@ -66,13 +63,12 @@ function resetResult() {
 }
 
 function getAnswer() {
-    let selectedAnswer
+    var selectedAnswer
     answers.forEach(answer => {
         if (answer.checked) {
-            selectedAnswer = answer.id
+            selectedAnswer = answer.value
         } 
     })
-
     return selectedAnswer
 }
 
@@ -111,7 +107,7 @@ function submitAnswer() {
 
     if (answer === quizData[currQuestion].correct_answer) {
         result.innerHTML = `<h2>Correct!</h2>`
-
+    
     } else {
        result.innerHTML = `<h2>Incorrect! The correct answer is "${correctText}". </h2>`
     }
