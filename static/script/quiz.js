@@ -22,6 +22,11 @@ const boxC = document.getElementById('boxC')
 const boxD = document.getElementById('boxD')
 const checkboxes = {boxA, boxB, boxC, boxD}
 
+const btnSubmit = document.getElementById('btnSubmit')
+const btnNext = document.getElementById('btnNext')
+const btnCont = document.getElementById('btnSaveCont')
+const btnStart = document.getElementById('btnStartQuiz')
+
 
 document.getElementById("btnSubmit").addEventListener("click", submitAnswer);
 document.getElementById("btnNext").addEventListener("click", getNextQuestion);
@@ -38,6 +43,7 @@ boxD.addEventListener("click", enableBtnSubmit)
 
 async function initiateQuiz() {
 
+    console.log("reached")
     const response  = await fetch(url, {
         method: 'POST',
         headers: {"Content-type": "application/json; charset=UTF-8"},
@@ -45,7 +51,7 @@ async function initiateQuiz() {
     }); 
 
     quizData = await response.json()
-
+    console.log(quizData)
     currQuestion = 0
     quizScore = 0
     generateQuiz()
