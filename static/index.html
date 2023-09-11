@@ -50,13 +50,11 @@
             </button>
         </nav>
         
-        
 
         <h1 id="title" class="">Just Enough</h1> 
             <p id="title" class="">A language learning web app</p>
                 
            <div id="allText">
-                <p id="cyclingHello">
                 <div class="slidingVertical">
                     <span>Hello</span>
                     <span>Bonjour</span>
@@ -64,31 +62,16 @@
                     <span>God dag</span>
                     <span>Hola</span>
                     </div>
-                </p>
+               
                 <p id="todayIs" style="padding-left: 140px;">today is</p> 
                 <p id="dayOfWeek"></p>
-                <script>
-                function updateText() {
-                    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                    var today = new Date();
-                    var currentDay = today.getDay();
-                    document.getElementById("dayOfWeek").innerHTML = daysOfWeek[currentDay];
-                    setTimeout(updateText, getNextUpdate());
-                }
-            
-                function getNextUpdate() {
-                    var now = new Date();
-                    var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-                    var midnight = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0, 0, 0);
-                    var timeUntilMidnight = midnight - now;
-                    return timeUntilMidnight;
-                }
-                </script>
+
+                <div>
+                    <img class="img-fluid" src="./images/landingpage.jpg" alt="hello">
+                </div>
+                <script src="./script/main.js"></script>
             </body>
-           </div>
           
-            <div>
-                <img class="img-fluid" src="./images/landingpage.jpg" alt="hello">
-            </div>
+        
     </body>
 </html>
