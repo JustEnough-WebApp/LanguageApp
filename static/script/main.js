@@ -13,3 +13,5 @@ function getNextUpdate() {
     var timeUntilMidnight = midnight - now;
     return timeUntilMidnight;
 }
+
+updateText()
