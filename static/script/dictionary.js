@@ -24,7 +24,6 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-
 // TODO: add functions for future langauges as project progresses
 function fillFields() {
     getDefinition();
