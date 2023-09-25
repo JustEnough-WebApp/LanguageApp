@@ -5,7 +5,6 @@ const spanishURL = "https://dictionaryapi.com/api/v3/references/spanish/json/" /
 const spanishKey = "?key=23e33a70-d854-46ff-9d3f-27667aef8cd6";
 
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
-const deeplKsey = "2b2f1cdb-c324-a0da-7107-dbecc04e19f1:fx";
 
 const frenchExtension = "api/getFrench";
 const germanExtension = "api/getGerman";
