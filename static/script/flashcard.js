@@ -15,12 +15,37 @@ var type
 var currCard
 var isFrontTranslation = true
 
-document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
-document.getElementById("btnNextCard").addEventListener("click", getNextCard);
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
+document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
+document.getElementById("btnNextCard").addEventListener("click", getNextCard);
 document.getElementById("btnFlip").addEventListener("click", flipCards);
 document.getElementById("btnShuffle").addEventListener("click", shuffle);
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowLeft") {
+        getPrevCard()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        getNextCard()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        flipCards()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        shuffle()
+        event.preventDefault()
+    }
+});
 
 async function initiateCard() {
 
