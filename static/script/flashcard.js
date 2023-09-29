@@ -13,11 +13,13 @@ var language
 var type
         
 var currCard
+var isFrontTranslation = true
 
 document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
 document.getElementById("btnNextCard").addEventListener("click", getNextCard);
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
+document.getElementById("btnReverse").addEventListener("click", reverseCards);
 document.getElementById("btnShuffle").addEventListener("click", shuffle);
 
 async function initiateCard() {
@@ -38,8 +40,14 @@ function generateCard() {
 	cardNum.innerHTML = `<h4>Word ${currCard + 1} / ${cardData.length}</h4>`
 
     const currData = cardData[currCard]
-    cardFront.innerHTML = currData.translation
-    cardBack.innerHTML = currData.english
+    if (isFrontTranslation) {
+        cardFront.innerHTML = currData.translation
+        cardBack.innerHTML = currData.english
+    } else {
+        cardFront.innerHTML = currData.english
+        cardBack.innerHTML = currData.translation
+    }
+    
 };
 
 function getNextCard() {
@@ -98,5 +106,7 @@ function shuffle() {
     generateCard()
   }
 
-
-
+function reverseCards() {
+    isFrontTranslation = !isFrontTranslation
+    generateCard()
+}
