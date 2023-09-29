@@ -18,6 +18,8 @@ document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
 document.getElementById("btnNextCard").addEventListener("click", getNextCard);
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
+document.getElementById("btnShuffle").addEventListener("click", shuffle);
+
 async function initiateCard() {
 
     const response  = await fetch(url, {
@@ -77,4 +79,24 @@ function disableStartBtn() {
         type = document.getElementById('cardCategory').value
     }
 }
+
+// Fisher-Yates shuffle algorithm
+function shuffle() {
+    currentIndex = cardData.length
+    randomIndex = 0
+    while (currentIndex > 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--
+  
+        temp = cardData[currentIndex]
+        cardData[currentIndex] = cardData[randomIndex]
+        cardData[randomIndex] = temp
+     
+    }
+
+    currCard = 0
+    generateCard()
+  }
+
+
 
