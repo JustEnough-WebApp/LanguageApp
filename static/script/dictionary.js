@@ -1,12 +1,11 @@
 const dictURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"; // + word + dictKey
 const dictKey = "?key=e7da4733-26a2-4b45-b02b-e1ee552f6a84"; 
 
-const spanishURL = "https://dictionaryapi.com/api/v3/references/spanish/json/" // + word + spanishKey
-const spanishKey = "?key=23e33a70-d854-46ff-9d3f-27667aef8cd6";
-
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
-const deeplKsey = "2b2f1cdb-c324-a0da-7107-dbecc04e19f1:fx";
+// const serverURL = "http://localhost:3000/"       for testing
 
+const englishExtension = "api/getEnglish"
+const spanishExtension = "api/getSpanish";
 const frenchExtension = "api/getFrench";
 const germanExtension = "api/getGerman";
 const norwegianExtension = "api/getNorwegian";
@@ -47,6 +46,21 @@ async function ping() {
     console.log(data);
 }
 
+async function getEnglish() {
+    let word = inputDictSearch.value;
+    let apiURL = serverURL + englishExtension;
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
+    const translation = (await result.text()).valueOf(Promise)
+    console.log(translation);
+    document.getElementById("englishTranslation").innerHTML = translation;
+    return;
+}
+
 async function getDefinition() {
     let word = inputDictSearch.value;
     let apiURL = dictURL + word + dictKey;
@@ -64,19 +78,16 @@ async function getDefinition() {
 
 async function getSpanish() {
     let word = inputDictSearch.value;
-    let apiURL = spanishURL + word + spanishKey;
-    const response = await fetch(apiURL);
-    const jsonObj = await response.json();
-    try {
-        var translation = jsonObj[0].shortdef[0];
-        if (translation.includes(":")) {
-            translation = translation.split(": ").pop();
-        }
-        document.getElementById("spanishTranslation").innerHTML = translation;
-    } catch (e) {
-        document.getElementById("spanishTranslation").innerHTML = 
-        "ERROR: cannot find word";
-    }
+    let apiURL = serverURL + spanishExtension;
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
+    const translation = (await result.text()).valueOf(Promise)
+    console.log(translation);
+    document.getElementById("spanishTranslation").innerHTML = translation;
     return;
 }
 
