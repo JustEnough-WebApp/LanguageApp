@@ -2,7 +2,7 @@ const dictURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json
 const dictKey = DICT_KEY;
 
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
-// const serverURL = "http://localhost:3000/"       for testing
+//const serverURL = "http://localhost:3000/"     //  for testing
 
 const englishExtension = "api/getEnglish"
 const spanishExtension = "api/getSpanish";
