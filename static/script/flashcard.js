@@ -19,7 +19,7 @@ document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
 document.getElementById("btnNextCard").addEventListener("click", getNextCard);
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
-document.getElementById("btnReverse").addEventListener("click", reverseCards);
+document.getElementById("btnFlip").addEventListener("click", flipCards);
 document.getElementById("btnShuffle").addEventListener("click", shuffle);
 
 async function initiateCard() {
@@ -106,7 +106,7 @@ function shuffle() {
     generateCard()
   }
 
-function reverseCards() {
+function flipCards() {
     isFrontTranslation = !isFrontTranslation
     generateCard()
 }
