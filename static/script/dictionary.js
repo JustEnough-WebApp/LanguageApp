@@ -1,5 +1,5 @@
 const dictURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"; // + word + dictKey
-const dictKey = "?key=e7da4733-26a2-4b45-b02b-e1ee552f6a84"; 
+const dictKey = DICT_KEY;
 
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
 // const serverURL = "http://localhost:3000/"       for testing
