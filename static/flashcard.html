@@ -157,23 +157,35 @@
                                     <div class="flip-card shadow">
                                         <div class="flip-card-inner">
                                             <div class="flip-card-front">
-                                                <h2 id="cardFront">Word</h2>
+                                                <h2 id="cardFront">Loading...</h2>
                                             </div>
                                             <div class="flip-card-back">
-                                                <h2 id="cardBack">Word</h2>
+                                                <h2 id="cardBack">Loading...</h2>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <br>
-                            <div class="card-footer mb-3 text-center">
-                                <button type="button" id="btnPrevCard" class="btn btn-outline-primary btn-md">Last Card</button>
-                                <button type="button" id="btnNextCard" class="btn btn-outline-primary btn-md">Next Card</button>
+                            <div class="card-footer mb-3 text-center btn-img top-row">
+                                <button type="button" id="btnPrevCard" title="Previous">
+                                    <img src="./images/icons/prev.png" alt="Previous">
+                                </button>
+                                <button type="button" id="btnNextCard" title="Next">
+                                    <img src="./images/icons/next.png" alt="Next">
+                                </button>
+                            </div>
+                            <div class="card-footer mb-3 text-center btn-img bottom-row">
+                                <button type="button" id="btnFlip" title="Flip Cards">
+                                    <img src="./images/icons/flip.png" alt="Flip Cards">
+                                </button>
+                                <button type="button" id="btnShuffle" title="Shuffle Cards">
+                                    <img src="./images/icons/shuffle.png" alt="Shuffle Cards">
+                                </button>
                             </div>
 
                             <div>
-                                <img class="img-fluid mt-5" src="./images/modal.jpg" alt="hello">
+                                <img class="img-fluid mt-5" src="./images/modal.jpg" alt="study">
                             </div>
 
                         </div>
@@ -188,7 +200,7 @@
             </div>
         
         <div>
-            <img class="img-fluid" src="./images/flashcard.jpg" alt="hello">
+            <img class="img-fluid" src="./images/flashcard.jpg" alt="study">
         </div>
 
         <script src="./script/flashcard.js"></script>

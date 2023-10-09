@@ -1,8 +1,9 @@
 const dictURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"; // + word + dictKey
-const dictKey = "?key=e7da4733-26a2-4b45-b02b-e1ee552f6a84"; 
+const dictKey = DICT_KEY;
 
 
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
+
 
 const spanishExtension = "api/getSpanish"
 const frenchExtension = "api/getFrench";
@@ -42,6 +43,21 @@ async function ping() {
     const response = await fetch(currURL);       
     const data = await response.text();
     console.log(data);
+}
+
+async function getEnglish() {
+    let word = inputDictSearch.value;
+    let apiURL = serverURL + englishExtension;
+    const result = await fetch(apiURL, {
+        method: 'POST',
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify({"word": word})
+    }); 
+    
+    const translation = (await result.text()).valueOf(Promise)
+    console.log(translation);
+    document.getElementById("englishTranslation").innerHTML = translation;
+    return;
 }
 
 async function getDefinition() {
