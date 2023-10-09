@@ -13,10 +13,39 @@ var language
 var type
         
 var currCard
+var isFrontTranslation = true
+
+document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
 document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
 document.getElementById("btnNextCard").addEventListener("click", getNextCard);
-document.getElementById("btnStudy").addEventListener("click", disableContBtn);
+document.getElementById("btnFlip").addEventListener("click", flipCards);
+document.getElementById("btnShuffle").addEventListener("click", shuffle);
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowLeft") {
+        getPrevCard()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        getNextCard()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        flipCards()
+        event.preventDefault()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        shuffle()
+        event.preventDefault()
+    }
+});
 
 async function initiateCard() {
 
@@ -36,8 +65,14 @@ function generateCard() {
 	cardNum.innerHTML = `<h4>Word ${currCard + 1} / ${cardData.length}</h4>`
 
     const currData = cardData[currCard]
-    cardFront.innerHTML = currData.translation
-    cardBack.innerHTML = currData.english
+    if (isFrontTranslation) {
+        cardFront.innerHTML = currData.translation
+        cardBack.innerHTML = currData.english
+    } else {
+        cardFront.innerHTML = currData.english
+        cardBack.innerHTML = currData.translation
+    }
+    
 };
 
 function getNextCard() {
@@ -78,3 +113,25 @@ function disableStartBtn() {
     }
 }
 
+// Fisher-Yates shuffle algorithm
+function shuffle() {
+    currentIndex = cardData.length
+    randomIndex = 0
+    while (currentIndex > 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--
+  
+        temp = cardData[currentIndex]
+        cardData[currentIndex] = cardData[randomIndex]
+        cardData[randomIndex] = temp
+     
+    }
+
+    currCard = 0
+    generateCard()
+  }
+
+function flipCards() {
+    isFrontTranslation = !isFrontTranslation
+    generateCard()
+}
