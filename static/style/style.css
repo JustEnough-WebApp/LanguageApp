@@ -41,16 +41,28 @@ p {
     height: 400px;
 }
 
+#allText {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 25vw;
+
+}
+.cyclingText {
+	text-align: center;
+}
+
 /*Vertical Sliding*/
-.slidingVertical{
-	text-align: center;      
+.slidingVertical {  
     font-family: Didot, serif;
     font-size: 40px;
     padding-top: 40px;
 	display: inline;
-	text-indent: 8px;
+	width: 30vw;
 }
-.slidingVertical span{
+.slidingVertical span {
+	margin-left: auto;
+	margin-right: auto;
 	animation: topToBottom 12.5s linear infinite 0s;
 	-ms-animation: topToBottom 12.5s linear infinite 0s;
 	-webkit-animation: topToBottom 12.5s linear infinite 0s;
@@ -59,22 +71,22 @@ p {
 	overflow: hidden;
 	position: absolute;
 }
-.slidingVertical span:nth-child(2){
+.slidingVertical span:nth-child(2) {
 	animation-delay: 2.5s;
 	-ms-animation-delay: 2.5s;
 	-webkit-animation-delay: 2.5s;
 }
-.slidingVertical span:nth-child(3){
+.slidingVertical span:nth-child(3) {
 	animation-delay: 5s;
 	-ms-animation-delay: 5s;
 	-webkit-animation-delay: 5s;
 }
-.slidingVertical span:nth-child(4){
+.slidingVertical span:nth-child(4) {
 	animation-delay: 7.5s;
 	-ms-animation-delay: 7.5s;
 	-webkit-animation-delay: 7.5s;
 }
-.slidingVertical span:nth-child(5){
+.slidingVertical span:nth-child(5) {
 	animation-delay: 10s;
 	-ms-animation-delay: 10s;
 	-webkit-animation-delay: 10s;
