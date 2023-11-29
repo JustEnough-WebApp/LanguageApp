@@ -3,10 +3,9 @@ const dictKey = DICT_KEY;
 
 
 const serverURL = "https://just-enough-server.azurewebsites.net/"; // for deepl API
-//const serverURL = "http://localhost:3000/"     //  for testing
 
-const englishExtension = "api/getEnglish"
-const spanishExtension = "api/getSpanish";
+
+const spanishExtension = "api/getSpanish"
 const frenchExtension = "api/getFrench";
 const germanExtension = "api/getGerman";
 const norwegianExtension = "api/getNorwegian";
@@ -24,7 +23,6 @@ document.addEventListener("keydown", function(event) {
         event.preventDefault();
     }
 });
-
 
 
 // TODO: add functions for future langauges as project progresses
@@ -92,7 +90,7 @@ async function getSpanish() {
     return;
 }
 
-// TODO: getFrench(), same as getGerman()
+
 async function getFrench() {
     let word = inputDictSearch.value;
     let apiURL = serverURL + frenchExtension;

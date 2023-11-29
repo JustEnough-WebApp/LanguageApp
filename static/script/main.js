@@ -6,6 +6,7 @@ function updateText() {
     setTimeout(updateText, getNextUpdate());
 }
 
+
 function getNextUpdate() {
     var now = new Date();
     var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
@@ -14,4 +15,5 @@ function getNextUpdate() {
     return timeUntilMidnight;
 }
 
-updateText()
+// TODO: add back in once multiple langauges are implemented
+// updateText()
