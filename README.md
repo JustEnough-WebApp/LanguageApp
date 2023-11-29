@@ -4,16 +4,17 @@ https://just-enough.azurewebsites.net
     
    
 ## Authors:  
+### Fall 2023 Team  
+Julie Dosher, juliegdosher@lewisu.edu
+
+### Sprint 2023 Team  
+#### DeadPoetsScrumciety Scrum Team   
 Le, vynle@lewisu.edu  
 Vy, vykle@lewisu.edu  
 Julie Dosher, juliegdosher@lewisu.edu  
 Alex Hartlaub, alexjhartlaub@lewisu.edu  
 Soren Thrawl, sorencthrawl@lewisu.edu  
-    
-     
-DeadPoetsScrumciety Scrum Team   
-CPSC 440, Spring 2023    
-     
+         
    
 ## About:  
 Just Enough is a simple website that aims to help users learn some basics and introductory phrases 
