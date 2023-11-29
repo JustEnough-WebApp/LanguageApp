@@ -26,6 +26,7 @@ Additionally, there is a Dictionary tab where users can search any English word 
      
 ## Build Instructions:  
 A link to our hosted website is included [here](https://just-enough.azurewebsites.net).  
+Our testing site is hosted [here](https://justenough-testing.azurewebsites.net/). New features get pushed here first.  
 Otherwise, download this repository, and install express, mongoose, and mongodb via Node to run on 
 your local machine.   
      
@@ -44,5 +45,4 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp
    
 ### API's Used:  
 Meriam-Webster Dictionary: https://dictionaryapi.com  
-Meriam-Webster Spanish-English Translation: https://dictionaryapi.com  
 DeepL Translate: https://www.deepl.com/docs-api  
