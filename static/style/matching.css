@@ -14,7 +14,45 @@ h2 {
 }
 
 h4 {
-  color: rgb(51, 51, 188);
+    color: rgb(51, 51, 188);
+}
+
+button {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container li {
+    list-style: none;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(212, 212, 243);
+    border: 3px solid rgb(127, 127, 220);
+    cursor: grab;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    margin: auto;
+    max-width: 80%;
+}
+
+.over {
+    background-color: rgb(159, 159, 229)
+}
+
+.draggable-list {
+    padding: 10px;
 }
 
 table {
