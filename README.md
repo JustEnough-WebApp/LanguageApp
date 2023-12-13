@@ -29,6 +29,7 @@ A link to our hosted website is included [here](https://just-enough.azurewebsite
 Our testing site is hosted [here](https://justenough-testing.azurewebsites.net/). New features get pushed here first.  
 Otherwise, download this repository, and install express, mongoose, and mongodb via Node to run on 
 your local machine.   
+Run "npm run start" to run locally.
      
     
 ## Credit:   
@@ -41,7 +42,10 @@ https://www.freepik.com/
     
 ### Flashcard (Flipping Card):    
 https://www.w3schools.com/howto/howto_css_flip_card.asp   
-     
+
+### Matching Game Inspiration:   
+https://bitbucket.org/james-schneider/drag-and-drop-api-matching-game/src/main/  
+   
    
 ### API's Used:  
 Meriam-Webster Dictionary: https://dictionaryapi.com  
