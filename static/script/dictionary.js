@@ -12,6 +12,9 @@ const norwegianExtension = "api/getNorwegian";
 
 const inputDictSearch = document.getElementById("inputDictSearch");
 
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
 
 inputDictSearch.addEventListener("click", clearSearchBar);
 document.getElementById("btnSearch").addEventListener("click", fillFields);

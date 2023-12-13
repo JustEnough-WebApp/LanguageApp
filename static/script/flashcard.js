@@ -15,6 +15,11 @@ var type
 var currCard
 var isFrontTranslation = true
 
+
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
 
 document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);

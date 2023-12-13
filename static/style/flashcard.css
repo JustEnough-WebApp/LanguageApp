@@ -1,13 +1,4 @@
-.navbar {
-    background-color: rgb(51, 51, 188);
-}
-
-.navbar-brand {
-    color: whitesmoke;
-    font-family: Didot, serif;
-}
-  
-h1 {
+ h1 {
     text-align: center;
     font-family: Didot, serif;
     font-size: 100px;

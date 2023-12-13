@@ -5,6 +5,9 @@ var matchingData
 var language
 var type
 
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
 
 async function initiateGame() {
     var table = document.getElementById("matchingTable");
