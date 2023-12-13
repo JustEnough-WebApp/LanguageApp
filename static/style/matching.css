@@ -26,6 +26,17 @@ h4 {
   color: rgb(51, 51, 188);
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+}
+
+tr {
+    font-size: 18pt;
+    height: 60pt;
+}
+
 p {
     font-size: 20px;
     color: rgba(51, 51, 188, 0.933);
