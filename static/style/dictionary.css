@@ -32,13 +32,3 @@ p {
     width: 50vw;
     height: 400px;
 }
-
-.navbar {
-    background-color: rgb(51, 51, 188);
-}
-
-.navbar-brand {
-    color: whitesmoke;
-    font-family: Didot, serif;
-}
-    

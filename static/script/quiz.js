@@ -8,6 +8,10 @@ var type
 var currQuestion 
 var quizScore 
 
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+
 const quiz = document.getElementById('quiz')
 const question = document.getElementById('question')
 const answers = document.querySelectorAll('.answer')

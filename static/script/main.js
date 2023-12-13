@@ -1,3 +1,7 @@
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+
 function updateText() {
     var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var today = new Date();

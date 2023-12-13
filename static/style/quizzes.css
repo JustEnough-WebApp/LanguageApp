@@ -1,10 +1,3 @@
-.navbar{
-    background-color: rgb(51, 51, 188);
-}
-.navbar-brand{
-    color: whitesmoke;
-    font-family: Didot, serif;
-}
 h1{
     text-align: center;
     font-family: Didot, serif;
@@ -12,23 +5,21 @@ h1{
     color: rgb(51, 51, 188);
     padding-top: 70px;
 }
+
 h2{
     font-size: 25px;
 }
+
 h4 {
     color: rgb(51, 51, 188);
-  }
+}
   
 p{
     font-size: 20px;
     color: rgba(51, 51, 188, 0.933);
     text-align: center;
 }
+
 .quiz-result h2 {
     font-size: 20px;
 }
-
-
-
-
-

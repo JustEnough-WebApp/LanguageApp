@@ -15,7 +15,14 @@ var type
 var currCard
 var isFrontTranslation = true
 
+
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+
+document.getElementById("contBtn").addEventListener("click", disableStartBtn);
 document.getElementById("btnStudy").addEventListener("click", disableContBtn);
+document.getElementById("startBtn").addEventListener("click", initiateCard);
 
 document.getElementById("btnPrevCard").addEventListener("click", getPrevCard);
 document.getElementById("btnNextCard").addEventListener("click", getNextCard);
@@ -129,7 +136,7 @@ function shuffle() {
 
     currCard = 0
     generateCard()
-  }
+}
 
 function flipCards() {
     isFrontTranslation = !isFrontTranslation

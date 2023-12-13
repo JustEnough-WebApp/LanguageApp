@@ -4,6 +4,9 @@ const url = "https://just-enough-server.azurewebsites.net/api/getLearn"
 var languages = [];
 var types = [];
 
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
 
 document.getElementById("btnStart").addEventListener("click", initiateLearning);
 
