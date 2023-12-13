@@ -134,7 +134,7 @@ function shuffle() {
 
     currCard = 0
     generateCard()
-  }
+}
 
 function flipCards() {
     isFrontTranslation = !isFrontTranslation
