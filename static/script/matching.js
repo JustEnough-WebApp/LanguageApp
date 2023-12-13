@@ -16,7 +16,8 @@ let foreignLanguageTerms = []
 const eSide = ["e0", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "e9"]
 const flSide = ["fl0", "fl1", "fl2", "fl3", "fl4", "fl5", "fl6", "fl7", "fl8", "fl9"]
 
-const draggableListItems = document.querySelectorAll('draggable-list li')
+let draggableListItems = []
+
 
 let selectedID;
 let dropTargetID;
@@ -24,7 +25,7 @@ let count = 0;
 
 function addEventListeners() {
     draggableListItems.forEach( item => {
-        item.addEventListener('dragStart', dragStart)
+        item.addEventListener('dragstart', dragStart)
         item.addEventListener('dragenter', dragEnter)
         item.addEventListener('drop', dragDrop)
         item.addEventListener('dragover', dragOver)
@@ -52,53 +53,67 @@ function dragOver(event) {
 
 function dragDrop() {
     dropTargetID = this.id
-    if (checkForMatch(selectedID, dropTargetID)) {
+    if (checkForMatchE(selectedID, dropTargetID)) {
         document.getElementById(selectedID).style.display = 'none'
         document.getElementById(dropTargetID).style.display = 'none'
         count++
+
     }
-    this.class.remove('over')
+    this.classList.remove('over')
 }
 
-function checkForMatch(selected, dropTarget) {
+function checkForMatchE(selected, dropTarget) {
     switch (selected) {
-        case e0:
-            return dropTarget.innerHTML === foreignLanguageTerms[0] ? true : false
+        case 'e0':
+            return document.getElementById(dropTarget).innerText === matchingData[0].translation ? true : false
         
-        case e1:
-            return dropTarget.innerHTML === foreignLanguageTerms[1] ? true : false
+        case 'e1':
+            return document.getElementById(dropTarget).innerText === matchingData[1].translation ? true : false
 
-        case e2:
-            return dropTarget.innerHTML === foreignLanguageTerms[2] ? true : false
+        case 'e2':
+            return document.getElementById(dropTarget).innerText === matchingData[2].translation ? true : false
 
-        case e3:
-            return dropTarget.innerHTML === foreignLanguageTerms[3] ? true : false
+        case 'e3':
+            return document.getElementById(dropTarget).innerText === matchingData[3].translation ? true : false
         
-        case e4:
-            return dropTarget.innerHTML === foreignLanguageTerms[4] ? true : false
+        case 'e4':
+            return document.getElementById(dropTarget).innerText === matchingData[4].translation ? true : false
         
-        case e5:
-            return dropTarget.innerHTML === foreignLanguageTerms[5] ? true : false
+        case 'e5':
+            return document.getElementById(dropTarget).innerText === matchingData[5].translation ? true : false
 
-        case e6:
-            return dropTarget.innerHTML === foreignLanguageTerms[6] ? true : false
+        case 'e6':
+            return document.getElementById(dropTarget).innerText === matchingData[6].translation ? true : false
 
-        case e7:
-            return dropTarget.innerHTML === foreignLanguageTerms[7] ? true : false
+        case 'e7':
+            return document.getElementById(dropTarget).innerText === matchingData[7].translation ? true : false
 
-        case e8:
-            return dropTarget.innerHTML === foreignLanguageTerms[8] ? true : false
+        case 'e8':
+            return document.getElementById(dropTarget).innerText === matchingData[8].translation ? true : false
         
-        case e9:
-            return dropTarget.innerHTML === foreignLanguageTerms[9] ? true : false
+        case 'e9':
+            return document.getElementById(dropTarget).innerText === matchingData[9].translation ? true : false
         
         default:
             return false
     }
 }
 
+
+function initiateDraggableListItems() {
+    for (let i = 0; i < eSide.length; i++) {
+        draggableListItems.push(document.getElementById(eSide[i]))
+        draggableListItems.push(document.getElementById(flSide[i]))
+    }
+    
+    addEventListeners()
+}
+
 async function initiateGame() {
-    // clear arrays from previous games
+    // resets info from previous game
+    count = 0
+    draggableListItems = []
+    initiateDraggableListItems()
     englishTerms = []
     foreignLanguageTerms = []
     matchingData = []
