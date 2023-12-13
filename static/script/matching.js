@@ -35,6 +35,9 @@ function addEventListeners() {
     })
 }
 
+document.getElementById("btnCont").addEventListener("click", disableStartBtn);
+document.getElementById("btnStart").addEventListener("click", initiateGame);
+
 function dragStart() {
     selectedID = this.id
 }
@@ -185,6 +188,8 @@ function endGame() {
 
         var cellEnglish = row.insertCell(0);
         var cellTranslation = row.insertCell(1);
+
+        cellTranslation.style = "text-align: right"
 
         cellEnglish.innerHTML = matchingData[i].english;
         cellTranslation.innerHTML = matchingData[i].translation;
