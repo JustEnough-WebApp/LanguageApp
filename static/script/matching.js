@@ -23,6 +23,8 @@ let selectedID;
 let dropTargetID;
 let count = 0;
 
+var table = document.getElementById("reviewTable");
+
 function addEventListeners() {
     draggableListItems.forEach( item => {
         item.addEventListener('dragstart', dragStart)
@@ -58,6 +60,10 @@ function dragDrop() {
         document.getElementById(dropTargetID).style.display = 'none'
         count++
 
+        // game end
+        if (count === matchingData.length) {
+            endGame()
+          }
     }
     this.classList.remove('over')
 }
@@ -109,8 +115,8 @@ function initiateDraggableListItems() {
     addEventListeners()
 }
 
-async function initiateGame() {
-    // resets info from previous game
+// resets info in case game was previously played
+function resetGame() {
     count = 0
     draggableListItems = []
     initiateDraggableListItems()
@@ -118,6 +124,15 @@ async function initiateGame() {
     foreignLanguageTerms = []
     matchingData = []
 
+    draggableListItems.forEach( item => {
+        item.style.display = "grid"
+    })
+    endMessage.style.display = 'none';
+    table.innerHTML = "";
+}
+
+async function initiateGame() {
+    resetGame()
     const response  = await fetch(url, {
         method: 'POST',
         headers: {"Content-type": "application/json; charset=UTF-8"},
@@ -158,8 +173,23 @@ function shuffle(arr) {
     }
   
     return arr;
-  }
+}
 
+function endGame() {
+    endMessage.style.display = 'block';
+    
+    let rowNum = 0
+    for (i = 0; i , matchingData.length; i++) {
+        var row = table.insertRow(rowNum);   
+        rowNum++;
+
+        var cellEnglish = row.insertCell(0);
+        var cellTranslation = row.insertCell(1);
+
+        cellEnglish.innerHTML = matchingData[i].english;
+        cellTranslation.innerHTML = matchingData[i].translation;
+    }
+}
 
 
 function enableBtnSubmit() {
