@@ -7,7 +7,7 @@ https://just-enough.azurewebsites.net
 ### Fall 2023 Team  
 Julie Dosher, juliegdosher@lewisu.edu
 
-### Sprint 2023 Team  
+### Spring 2023 Team  
 #### DeadPoetsScrumciety Scrum Team   
 Le, vynle@lewisu.edu  
 Vy, vykle@lewisu.edu  
